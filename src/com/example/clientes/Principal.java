@@ -1,7 +1,9 @@
 package com.example.clientes;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -13,6 +15,18 @@ public class Principal extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.principal);
+		
+		//Carregando e criando o Banco de dados. Parâmetros: "Nome do banco", passei este contex pq só a minha aplicação terá acesso, null= não quero usar nenhum cursor factory 
+		SQLiteDatabase db =  openOrCreateDatabase("contados.db", Context.MODE_PRIVATE, null);
+		
+		//Criando o banco
+		StringBuilder strb = new StringBuilder();
+		//Botei o IF NOT EXISTS pq se o usuario fechar aplicação e abrir de novo, ele dará erro pq ficará criando o banco novamente.
+		strb.append("CREATE TABLE IF NOT EXISTS CONTATOS(ID INTEGER PRIMARY KEY, NOME VARCHAR(50), LOGIN VARCHAR(15), EMAIL VARCHAR(50), NUMERO INTEGER, SENHA CHAR(15));");
+
+		//Executando o comando Create
+		db.execSQL(strb.toString());
+		
 		
 		//Vou recuperar cada botão do meu view
 		Button botaoCadastro = (Button) findViewById(R.id.botaoCadastrar);
