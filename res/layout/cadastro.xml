@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	android:id="@+id/widget32"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+<TextView
+	android:id="@+id/txtNome"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Nome" />
+
+<EditText
+    android:id="@+id/editTextNome"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:inputType="text" />
+
+<TextView
+	android:id="@+id/txtEmail"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Email:" />
+
+<EditText
+    android:id="@+id/editTextEmail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Email:"
+    android:inputType="textEmailSubject"
+    android:textSize="18sp" />
+
+<TextView
+	android:id="@+id/txtLogin"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Login" />
+<EditText
+	android:id="@+id/editTextLogin"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:hint="Login"
+	android:textSize="18sp" />
+<TextView
+	android:id="@+id/txtSenha"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Senha:" />
+
+<EditText
+    android:id="@+id/editTextSenha"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:inputType="textPassword|textWebPassword" >
+
+    <requestFocus />
+</EditText>
+
+<Button
+	android:id="@+id/botaoCadastrar"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Salvar Cadastro" />
+</LinearLayout>
