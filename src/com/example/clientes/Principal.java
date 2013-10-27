@@ -14,10 +14,11 @@ public class Principal extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.principal);
+		//setContentView(R.layout.principal);
+		setContentView(R.layout.principal);//Exibe o view de principal
 		
-		//Carregando e criando o Banco de dados. Parâmetros: "Nome do banco", passei este contex pq só a minha aplicação terá acesso, null= não quero usar nenhum cursor factory 
-		SQLiteDatabase db =  openOrCreateDatabase("contados.db", Context.MODE_PRIVATE, null);
+		//Carregando e criando o Banco de dados. Parâmetros: "Nome do banco", passei este contex pq SÓ a minha aplicação terá acesso, null= não quero usar nenhum cursor factory 
+		SQLiteDatabase db =  openOrCreateDatabase("CONTATOS.db", Context.MODE_PRIVATE, null);
 		
 		//Criando o banco
 		StringBuilder strb = new StringBuilder();
