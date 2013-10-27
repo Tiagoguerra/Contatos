@@ -57,16 +57,17 @@ public class Cadastro extends Activity implements Runnable {
 
 	@Override
 	public void run() {
-		SQLiteDatabase db = openOrCreateDatabase("contados.db", Context.MODE_PRIVATE, null);
+		//Criando conexão
+		SQLiteDatabase db = openOrCreateDatabase("CONTATOS.db", Context.MODE_PRIVATE, null);
 		ContentValues ctv = new ContentValues();
-		ctv.put("nome", editTextNome.getText().toString());
-		ctv.put("email", editTextEmail.getText().toString());
-		ctv.put("login", editTextLogin.getText().toString());
-		ctv.put("senha", editTextSenha.getText().toString());
+		ctv.put("NOME", editTextNome.getText().toString());
+		ctv.put("EMAIL", editTextEmail.getText().toString());
+		ctv.put("LOGIN", editTextLogin.getText().toString());
+		ctv.put("SENHA", editTextSenha.getText().toString());
 		//
 		
 		//Se for > q 0 é pq inseriu
-		if( db.insert("contados", null, ctv) > 0 ){
+		if( db.insert("CONTATOS", null, ctv) > 0 ){
 			handlerSucesso.sendEmptyMessage(0);
 		}
 		
